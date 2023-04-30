@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
+  {% block head %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} My Blog {% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    {% endblock %}
+  {% endblock %}
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">fBlog</label>
-        <ul>
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="#">Posts</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>   
+  {% block body %}
+    <!--Navbar-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">fblog.com</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="features.html"> Posts </a></li>
+                    <li><a href="about.html"> Contact </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-    <h1>Test </h1> 
-
-
-
-
+    <div>
+        <h1>Welcome to my learning Journy 
+        </h1>
+        <p>Copyright &copy; 2020</p>
+    </div>
+  {% endblock %}
 
 
 </body>
+{% block footer %}
+<!-- Footer -->
+<footer class="footer bg-dark py-5">
+    
+   
+<div class="container grid grid-3">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="social">
+        <a href="#"><i class="fab fa-github fa-2x"></i></a>
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+    </div>
+</div>
+</footer>
+{% endblock %}
 </html>
